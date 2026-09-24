@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — Aurex Capital</title>
+  <meta name="description" content="Browse Aurex Capital's selection of gold, silver, platinum, and palladium products including bars, coins, and alternative asset portfolios.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Aurex Capital Home"><span class="navbar__logo-icon"><i data-lucide="gem"></i></span>Aurex Capital</a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="home2.html" class="navbar__link">Home 2</a>
+        <a href="services.html" class="navbar__link">Services</a>
+        <a href="products.html" class="navbar__link active">Products</a>
+        <a href="vaulting.html" class="navbar__link">Vaulting</a>
+        <a href="insights.html" class="navbar__link">Insights</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+        <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+        <a href="login.html" class="navbar__login-btn">Login</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__drawer" role="dialog" aria-label="Mobile menu">
+      <button class="navbar__drawer-close" aria-label="Close menu"><i data-lucide="x"></i></button>
+      <div class="navbar__drawer-links">
+        <a href="index.html" class="navbar__drawer-link">Home</a><a href="home2.html" class="navbar__drawer-link">Home 2</a>
+        <a href="services.html" class="navbar__drawer-link">Services</a><a href="products.html" class="navbar__drawer-link active">Products</a>
+        <a href="vaulting.html" class="navbar__drawer-link">Vaulting</a><a href="insights.html" class="navbar__drawer-link">Insights</a>
+        <a href="blog.html" class="navbar__drawer-link">Blog</a><a href="contact.html" class="navbar__drawer-link">Contact</a>
+        <a href="dashboard.html" class="navbar__drawer-link">Dashboard</a><a href="login.html" class="navbar__drawer-link">Login</a>
+      </div>
+      <div class="navbar__drawer-actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+      </div>
+    </div>
+    <div class="navbar__overlay"></div>
+  </nav>
+
+  <main id="main">
+    <!-- ═══ PAGE HERO ═══ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label">Precious Metals & Beyond</span>
+        <h1>Our Products</h1>
+        <p>Invest in the world's most enduring stores of value — from gold bars to diversified alternative asset portfolios.</p>
+      </div>
+    </section>
+
+    <!-- ═══ GOLD PRODUCTS ═══ -->
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Gold</span>
+          <h2>Gold Investment Products</h2>
+          <p>The ultimate store of value. Available in bars and coins from LBMA-approved refiners.</p>
+        </div>
+        <div class="grid grid--3">
+          <div class="product-card reveal reveal-delay-1">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=600&q=80" alt="1kg gold bar from LBMA-approved refiner" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Gold Bar</span>
+              <h3>1 Kilogram Gold Bar</h3>
+              <div class="product-card__price">$75,328.00</div>
+              <a href="login.html" class="btn btn--gold btn--sm">Buy Now</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-2">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1624365168968-f283d506c6b1?w=600&q=80" alt="1oz gold coin American Eagle" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Gold Coin</span>
+              <h3>1 oz American Gold Eagle</h3>
+              <div class="product-card__price">$2,428.50</div>
+              <a href="login.html" class="btn btn--gold btn--sm">Buy Now</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-3">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1607292803062-5b8ff0531b88?w=600&q=80" alt="100g gold bar PAMP Suisse" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Gold Bar</span>
+              <h3>100g PAMP Suisse Bar</h3>
+              <div class="product-card__price">$7,684.20</div>
+              <a href="login.html" class="btn btn--gold btn--sm">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SILVER PRODUCTS ═══ -->
+    <section class="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Silver</span>
+          <h2>Silver Investment Products</h2>
+          <p>Industrial demand meets monetary heritage. Silver offers both growth potential and portfolio protection.</p>
+        </div>
+        <div class="grid grid--3">
+          <div class="product-card reveal reveal-delay-1">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1589787168422-b08a8316c7b0?w=600&q=80" alt="1kg silver bar Royal Canadian Mint" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Silver Bar</span>
+              <h3>1 Kilogram Silver Bar</h3>
+              <div class="product-card__price">$928.40</div>
+              <a href="login.html" class="btn btn--primary btn--sm">Buy Now</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-2">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1574607383476-f517f260d30b?w=600&q=80" alt="100oz silver bar" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Silver Bar</span>
+              <h3>100 oz Silver Bar</h3>
+              <div class="product-card__price">$2,862.50</div>
+              <a href="login.html" class="btn btn--primary btn--sm">Buy Now</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-3">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1605792657660-596af9009e82?w=600&q=80" alt="1oz silver coin Canadian Maple Leaf" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Silver Coin</span>
+              <h3>1 oz Canadian Maple Leaf</h3>
+              <div class="product-card__price">$32.95</div>
+              <a href="login.html" class="btn btn--primary btn--sm">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PLATINUM & PALLADIUM ═══ -->
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">PGMs</span>
+          <h2>Platinum & Palladium</h2>
+          <p>Platinum group metals offer unique industrial exposure alongside precious metal characteristics.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="product-card reveal reveal-delay-1">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="1oz platinum bar" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Platinum</span>
+              <h3>1 oz Platinum Bar</h3>
+              <div class="product-card__price">$1,024.80</div>
+              <a href="login.html" class="btn btn--primary btn--sm">Buy Now</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-2">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80" alt="1oz palladium bar" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Palladium</span>
+              <h3>1 oz Palladium Bar</h3>
+              <div class="product-card__price">$978.50</div>
+              <a href="login.html" class="btn btn--primary btn--sm">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta">
+      <div class="cta__deco" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Custom Orders</span>
+          <h2>Need a Larger Allocation?</h2>
+          <p>Our institutional desk handles orders of $100K+ with custom pricing and direct refiner sourcing.</p>
+        </div>
+        <div class="reveal" style="text-align:center;">
+          <a href="contact.html" class="btn btn--gold btn--lg">Contact Our Desk</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo"><span class="footer__logo-icon"><i data-lucide="gem"></i></span>Aurex Capital</div>
+          <p>Premier alternative asset and precious metals investment firm since 2008.</p>
+        </div>
+        <div class="footer__col"><h4>Invest</h4><ul><li><a href="products.html">Gold</a></li><li><a href="products.html">Silver</a></li><li><a href="products.html">Platinum</a></li><li><a href="services.html">Advisory</a></li></ul></div>
+        <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="vaulting.html">Vaulting</a></li><li><a href="insights.html">Insights</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer__col"><h4>Account</h4><ul><li><a href="login.html">Client Login</a></li><li><a href="register.html">Open Account</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aurex Capital. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" class="footer__social" aria-label="Twitter" title="Twitter / X"><i data-lucide="twitter"></i></a>
+          <a href="#" class="footer__social" aria-label="Instagram" title="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" class="footer__social" aria-label="YouTube" title="YouTube"><i data-lucide="youtube"></i></a>
+          <a href="#" class="footer__social" aria-label="Facebook" title="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

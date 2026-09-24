@@ -1,0 +1,130 @@
+/* ═══════════════════════════════════════════════════════════════════
+   AUREX CAPITAL — RTL OVERRIDES
+   Activated via dir="rtl" on <html>
+   ═══════════════════════════════════════════════════════════════════ */
+
+[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Navbar hamburger animation flip */
+[dir="rtl"] .navbar__hamburger.open span:nth-child(1) {
+  transform: rotate(-45deg) translate(-4px, 5px);
+}
+
+[dir="rtl"] .navbar__hamburger.open span:nth-child(3) {
+  transform: rotate(45deg) translate(-4px, -5px);
+}
+
+/* Drawer slides from left in RTL */
+[dir="rtl"] .navbar__drawer {
+  inset-inline-end: auto;
+  inset-inline-start: 0;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .navbar__drawer.open {
+  transform: translateX(0);
+}
+
+/* Hero label line */
+[dir="rtl"] .hero__label::before {
+  order: 1;
+}
+
+/* Card link arrow flip */
+[dir="rtl"] .card__link i {
+  transform: scaleX(-1);
+}
+
+/* Timeline */
+[dir="rtl"] .timeline {
+  padding-inline-start: 0;
+  padding-inline-end: var(--space-5);
+}
+
+[dir="rtl"] .timeline::before {
+  inset-inline-start: auto;
+  inset-inline-end: 12px;
+}
+
+[dir="rtl"] .timeline__dot {
+  inset-inline-start: auto;
+  inset-inline-end: calc(-1 * var(--space-5) + 4px);
+}
+
+/* Blog single blockquote */
+[dir="rtl"] .blog-single__content blockquote {
+  border-inline-start: none;
+  border-inline-end: 3px solid var(--gold);
+  padding-inline-start: 0;
+  padding-inline-end: var(--space-3);
+}
+
+/* Testimonial nav arrows */
+[dir="rtl"] .testimonials__nav .prev-btn i,
+[dir="rtl"] .testimonials__nav .next-btn i {
+  transform: scaleX(-1);
+}
+
+/* Transaction icon direction */
+[dir="rtl"] .transaction-item__icon.buy i,
+[dir="rtl"] .transaction-item__icon.sell i {
+  transform: scaleX(-1);
+}
+
+/* Market ticker */
+[dir="rtl"] .market-ticker__track {
+  animation-direction: reverse;
+}
+
+/* Dashboard sidebar */
+[dir="rtl"] .dashboard__sidebar {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+}
+
+[dir="rtl"] .dashboard__main {
+  margin-inline-start: 0;
+  margin-inline-end: 260px;
+}
+
+@media (max-width: 1024px) {
+  [dir="rtl"] .dashboard__main {
+    margin-inline-end: 0;
+  }
+
+  [dir="rtl"] .dashboard__sidebar {
+    transform: translateX(100%);
+  }
+
+  [dir="rtl"] .dashboard__sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Deco elements */
+[dir="rtl"] .hero__deco--lines {
+  inset-inline-end: auto;
+  inset-inline-start: -60px;
+}
+
+[dir="rtl"] .hero__deco--diamond {
+  inset-inline-start: auto;
+  inset-inline-end: 60px;
+}
+
+/* ── Box UI RTL Hover Transitions ── */
+[dir="rtl"] .card__link:hover i {
+  transform: scaleX(-1) translateX(3px);
+}
+
+[dir="rtl"] .timeline__item:hover,
+[dir="rtl"] .market-price-item:hover,
+[dir="rtl"] .transaction-item:hover,
+[dir="rtl"] .message-item:hover,
+[dir="rtl"] .doc-item:hover,
+[dir="rtl"] .insurance-item:hover {
+  transform: translateX(-4px);
+}
+

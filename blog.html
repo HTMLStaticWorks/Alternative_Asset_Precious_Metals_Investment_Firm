@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Aurex Capital</title>
+  <meta name="description" content="Read the latest articles on precious metals investing, market analysis, portfolio strategy, and alternative asset insights from Aurex Capital's research team.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Aurex Capital Home"><span class="navbar__logo-icon"><i data-lucide="gem"></i></span>Aurex Capital</a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a><a href="home2.html" class="navbar__link">Home 2</a>
+        <a href="services.html" class="navbar__link">Services</a><a href="products.html" class="navbar__link">Products</a>
+        <a href="vaulting.html" class="navbar__link">Vaulting</a><a href="insights.html" class="navbar__link">Insights</a>
+        <a href="blog.html" class="navbar__link active">Blog</a><a href="contact.html" class="navbar__link">Contact</a>
+        <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+        <a href="login.html" class="navbar__login-btn">Login</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__drawer" role="dialog" aria-label="Mobile menu">
+      <button class="navbar__drawer-close" aria-label="Close menu"><i data-lucide="x"></i></button>
+      <div class="navbar__drawer-links">
+        <a href="index.html" class="navbar__drawer-link">Home</a><a href="home2.html" class="navbar__drawer-link">Home 2</a>
+        <a href="services.html" class="navbar__drawer-link">Services</a><a href="products.html" class="navbar__drawer-link">Products</a>
+        <a href="vaulting.html" class="navbar__drawer-link">Vaulting</a><a href="insights.html" class="navbar__drawer-link">Insights</a>
+        <a href="blog.html" class="navbar__drawer-link active">Blog</a><a href="contact.html" class="navbar__drawer-link">Contact</a>
+        <a href="dashboard.html" class="navbar__drawer-link">Dashboard</a><a href="login.html" class="navbar__drawer-link">Login</a>
+      </div>
+      <div class="navbar__drawer-actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+      </div>
+    </div>
+    <div class="navbar__overlay"></div>
+  </nav>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label">Knowledge Hub</span>
+        <h1>The Aurex Blog</h1>
+        <p>Analysis, education, and insights for precious metals investors.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="blog-grid">
+          <article class="blog-card reveal reveal-delay-1">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=600&q=80" alt="Gold bars stacked in vault" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Market Analysis</span>
+                <span class="blog-card__date">Sep 18, 2024</span>
+              </div>
+              <h3><a href="blog-single.html">Why Central Banks Are Buying Gold at Record Pace</a></h3>
+              <p class="blog-card__excerpt">Central bank gold purchases hit 1,136 tonnes in 2023 — the highest in over 50 years. We analyze the drivers behind this structural shift and what it means for retail investors.</p>
+              <div class="blog-card__author">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&q=80" alt="James Hartwell" loading="lazy">
+                <span class="blog-card__author-name">James Hartwell</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal reveal-delay-2">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80" alt="Trading screens showing market data" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Strategy</span>
+                <span class="blog-card__date">Sep 12, 2024</span>
+              </div>
+              <h3><a href="blog-single.html">The 10% Portfolio Rule: Optimal Gold Allocation</a></h3>
+              <p class="blog-card__excerpt">Research shows that a 5–15% allocation to gold can reduce portfolio volatility by up to 20%. Here's how to determine your ideal allocation.</p>
+              <div class="blog-card__author">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=60&q=80" alt="Dr. Lena Fischer" loading="lazy">
+                <span class="blog-card__author-name">Dr. Lena Fischer</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal reveal-delay-3">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1589787168422-b08a8316c7b0?w=600&q=80" alt="Silver bars and coins" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Education</span>
+                <span class="blog-card__date">Sep 5, 2024</span>
+              </div>
+              <h3><a href="blog-single.html">Silver's Dual Role: Industrial Metal Meets Store of Value</a></h3>
+              <p class="blog-card__excerpt">Silver's unique position as both an industrial commodity and monetary metal creates opportunities that pure precious metals don't offer.</p>
+              <div class="blog-card__author">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&q=80" alt="Marcus Chen" loading="lazy">
+                <span class="blog-card__author-name">Marcus Chen</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal reveal-delay-1">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Vault security door" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Security</span>
+                <span class="blog-card__date">Aug 28, 2024</span>
+              </div>
+              <h3><a href="blog-single.html">Allocated vs. Unallocated Storage: What Investors Must Know</a></h3>
+              <p class="blog-card__excerpt">The difference between allocated and unallocated metal storage can mean the difference between owning gold and merely being owed gold.</p>
+              <div class="blog-card__author">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=60&q=80" alt="Sarah Mitchell" loading="lazy">
+                <span class="blog-card__author-name">Sarah Mitchell</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal reveal-delay-2">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Analytics dashboard on screen" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Market Analysis</span>
+                <span class="blog-card__date">Aug 20, 2024</span>
+              </div>
+              <h3><a href="blog-single.html">Gold/Silver Ratio at 84: What the Data Tells Us</a></h3>
+              <p class="blog-card__excerpt">The gold-to-silver ratio currently stands at 84, significantly above its historical average. We analyze whether silver is undervalued relative to gold.</p>
+              <div class="blog-card__author">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&q=80" alt="James Hartwell" loading="lazy">
+                <span class="blog-card__author-name">James Hartwell</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal reveal-delay-3">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" alt="Financial district skyline" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Economy</span>
+                <span class="blog-card__date">Aug 14, 2024</span>
+              </div>
+              <h3><a href="blog-single.html">How Interest Rate Cuts Impact Precious Metal Prices</a></h3>
+              <p class="blog-card__excerpt">With the Fed signaling rate cuts, we examine the historical relationship between monetary policy easing and precious metals performance.</p>
+              <div class="blog-card__author">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=60&q=80" alt="Dr. Lena Fischer" loading="lazy">
+                <span class="blog-card__author-name">Dr. Lena Fischer</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo"><span class="footer__logo-icon"><i data-lucide="gem"></i></span>Aurex Capital</div>
+          <p>Premier alternative asset and precious metals investment firm since 2008.</p>
+        </div>
+        <div class="footer__col"><h4>Invest</h4><ul><li><a href="products.html">Gold</a></li><li><a href="products.html">Silver</a></li><li><a href="products.html">Platinum</a></li><li><a href="services.html">Advisory</a></li></ul></div>
+        <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="vaulting.html">Vaulting</a></li><li><a href="insights.html">Insights</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer__col"><h4>Account</h4><ul><li><a href="login.html">Client Login</a></li><li><a href="register.html">Open Account</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="#">Privacy</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aurex Capital. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" class="footer__social" aria-label="Twitter" title="Twitter / X"><i data-lucide="twitter"></i></a>
+          <a href="#" class="footer__social" aria-label="Instagram" title="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" class="footer__social" aria-label="YouTube" title="YouTube"><i data-lucide="youtube"></i></a>
+          <a href="#" class="footer__social" aria-label="Facebook" title="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

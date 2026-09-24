@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#050912"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDF3DA"/>
+      <stop offset="30%" stop-color="#E2C17C"/>
+      <stop offset="65%" stop-color="#C9A96E"/>
+      <stop offset="100%" stop-color="#8C661D"/>
+    </linearGradient>
+    <linearGradient id="facetLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2C17C" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#C9A96E" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#E2C17C" stop-opacity="0.7"/>
+    </linearGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base with Deep Obsidian Navy -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="2"/>
+  <rect x="5.5" y="5.5" width="53" height="53" rx="13" fill="none" stroke="#E2C17C" stroke-width="0.75" stroke-opacity="0.25"/>
+
+  <!-- Aurex Gold Gem / Diamond Emblem -->
+  <g transform="translate(12, 14)" filter="url(#goldGlow)">
+    <!-- Top Crown Table Facet -->
+    <polygon points="10,3 30,3 35,13 5,13" fill="url(#goldGrad)" opacity="0.95"/>
+    <polygon points="10,3 30,3 35,13 5,13" fill="url(#facetLight)" opacity="0.45"/>
+
+    <!-- Left Crown Triangle -->
+    <polygon points="0,13 10,3 5,13" fill="#B38A2A"/>
+
+    <!-- Right Crown Triangle -->
+    <polygon points="40,13 30,3 35,13" fill="#886317"/>
+
+    <!-- Pavilion Center Facet -->
+    <polygon points="5,13 35,13 20,34" fill="url(#goldGrad)" opacity="0.92"/>
+
+    <!-- Central Shimmer Flare -->
+    <polygon points="14,13 26,13 20,34" fill="#FFFFFF" opacity="0.4"/>
+
+    <!-- Left Lower Pavilion Facet -->
+    <polygon points="0,13 5,13 20,34" fill="#8C661D"/>
+
+    <!-- Right Lower Pavilion Facet -->
+    <polygon points="35,13 40,13 20,34" fill="#694C10"/>
+
+    <!-- Girdle Horizontal Accent Line -->
+    <line x1="0" y1="13" x2="40" y2="13" stroke="#FFF" stroke-width="0.75" stroke-opacity="0.6"/>
+
+    <!-- Overall Outer Silhouette Outline -->
+    <polygon points="10,3 30,3 40,13 20,34 0,13" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurex Capital — Wealth Reimagined</title>
+  <meta name="description" content="Discover a reimagined approach to precious metals investing with Aurex Capital. Explore gold, silver, and platinum with institutional-grade vaulting.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Aurex Capital Home">
+        <span class="navbar__logo-icon"><i data-lucide="gem"></i></span>
+        Aurex Capital
+      </a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="home2.html" class="navbar__link active">Home 2</a>
+        <a href="services.html" class="navbar__link">Services</a>
+        <a href="products.html" class="navbar__link">Products</a>
+        <a href="vaulting.html" class="navbar__link">Vaulting</a>
+        <a href="insights.html" class="navbar__link">Insights</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+        <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+        <a href="login.html" class="navbar__login-btn">Login</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__drawer" role="dialog" aria-label="Mobile menu">
+      <button class="navbar__drawer-close" aria-label="Close menu"><i data-lucide="x"></i></button>
+      <div class="navbar__drawer-links">
+        <a href="index.html" class="navbar__drawer-link">Home</a>
+        <a href="home2.html" class="navbar__drawer-link active">Home 2</a>
+        <a href="services.html" class="navbar__drawer-link">Services</a>
+        <a href="products.html" class="navbar__drawer-link">Products</a>
+        <a href="vaulting.html" class="navbar__drawer-link">Vaulting</a>
+        <a href="insights.html" class="navbar__drawer-link">Insights</a>
+        <a href="blog.html" class="navbar__drawer-link">Blog</a>
+        <a href="contact.html" class="navbar__drawer-link">Contact</a>
+        <a href="dashboard.html" class="navbar__drawer-link">Dashboard</a>
+        <a href="login.html" class="navbar__drawer-link">Login</a>
+      </div>
+      <div class="navbar__drawer-actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+      </div>
+    </div>
+    <div class="navbar__overlay"></div>
+  </nav>
+
+  <main id="main">
+    <!-- ═══ HERO ALT — Centered + Typing Effect ═══ -->
+    <section class="hero hero--alt">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1618044733300-9472054094ee?w=1920&q=80" alt="Abstract golden geometric pattern" loading="eager">
+      </div>
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__label">Alternative Investments</span>
+          <h1>Invest in <span data-typing="Gold|Silver|Platinum|Your Future"></span><span class="typing-cursor" aria-hidden="true"></span></h1>
+          <p class="hero__desc">Aurex Capital empowers investors to move beyond equities and bonds. Access the world's most enduring assets through a single, secure platform.</p>
+          <div class="hero__btns">
+            <a href="register.html" class="btn btn--gold btn--lg">Start Investing</a>
+            <a href="about.html" class="btn btn--secondary btn--lg">Our Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ INTERACTIVE PRICE TRACKER ═══ -->
+    <section class="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Live Prices</span>
+          <h2>Today's Precious Metals</h2>
+          <p>Real-time spot prices sourced from LBMA benchmarks.</p>
+        </div>
+        <div class="grid grid--4 reveal">
+          <div class="card" style="cursor:pointer;" onclick="this.classList.toggle('expanded')">
+            <div class="card__icon"><i data-lucide="circle-dollar-sign"></i></div>
+            <h3>Gold</h3>
+            <p style="font-family:var(--font-heading);font-size:var(--size-h3);font-weight:var(--weight-h3);color:var(--color-accent);margin-block-end:var(--space-1);">$2,341.50</p>
+            <p style="color:var(--color-success);font-size:var(--size-caption);">▲ +1.24% today</p>
+          </div>
+          <div class="card" style="cursor:pointer;" onclick="this.classList.toggle('expanded')">
+            <div class="card__icon"><i data-lucide="circle-dollar-sign"></i></div>
+            <h3>Silver</h3>
+            <p style="font-family:var(--font-heading);font-size:var(--size-h3);font-weight:var(--weight-h3);color:var(--color-accent);margin-block-end:var(--space-1);">$27.85</p>
+            <p style="color:var(--color-success);font-size:var(--size-caption);">▲ +2.18% today</p>
+          </div>
+          <div class="card" style="cursor:pointer;" onclick="this.classList.toggle('expanded')">
+            <div class="card__icon"><i data-lucide="circle-dollar-sign"></i></div>
+            <h3>Platinum</h3>
+            <p style="font-family:var(--font-heading);font-size:var(--size-h3);font-weight:var(--weight-h3);color:var(--color-accent);margin-block-end:var(--space-1);">$1,012.30</p>
+            <p style="color:var(--color-error);font-size:var(--size-caption);">▼ -0.45% today</p>
+          </div>
+          <div class="card" style="cursor:pointer;" onclick="this.classList.toggle('expanded')">
+            <div class="card__icon"><i data-lucide="circle-dollar-sign"></i></div>
+            <h3>Palladium</h3>
+            <p style="font-family:var(--font-heading);font-size:var(--size-h3);font-weight:var(--weight-h3);color:var(--color-accent);margin-block-end:var(--space-1);">$967.40</p>
+            <p style="color:var(--color-success);font-size:var(--size-caption);">▲ +0.72% today</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICES OVERVIEW ═══ -->
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Solutions</span>
+          <h2>Tailored Investment Strategies</h2>
+          <p>From direct metal ownership to portfolio integration, we offer solutions for every investor.</p>
+        </div>
+        <div class="grid grid--3">
+          <div class="card reveal reveal-delay-1">
+            <div class="card__icon"><i data-lucide="briefcase"></i></div>
+            <h3>Wealth Preservation</h3>
+            <p>Protect purchasing power with physical precious metals held in your name in insured, allocated storage.</p>
+            <a href="services.html" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <div class="card__icon"><i data-lucide="pie-chart"></i></div>
+            <h3>Portfolio Diversification</h3>
+            <p>Reduce correlation risk by adding 5–20% precious metals allocation alongside traditional equities and bonds.</p>
+            <a href="services.html" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="card reveal reveal-delay-3">
+            <div class="card__icon"><i data-lucide="landmark"></i></div>
+            <h3>Generational Transfer</h3>
+            <p>Physical gold and silver have preserved wealth across centuries — ideal for multi-generational estate planning.</p>
+            <a href="services.html" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ABOUT SPLIT (reversed layout from Home) ═══ -->
+    <section>
+      <div class="container">
+        <div class="about-split" style="direction: ltr;">
+          <div class="about-split__content reveal">
+            <span class="section-label">Our Approach</span>
+            <h2>Transparency at Every Step</h2>
+            <p>Every ounce is allocated, audited, and insured. Our platform provides 24/7 access to your holdings, real-time valuations, and complete transaction history.</p>
+            <p>We believe that trust is built through radical transparency. That's why we publish quarterly audit reports and maintain real-time inventory tracking for every client.</p>
+            <a href="about.html" class="btn btn--primary">Learn About Us</a>
+          </div>
+          <div class="about-split__img reveal">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="Financial data analysis on screens" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TESTIMONIALS ═══ -->
+    <section class="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Testimonials</span>
+          <h2>What Our Clients Say</h2>
+        </div>
+        <div class="grid grid--3 reveal">
+          <div class="card">
+            <p style="font-family:var(--font-heading);font-size:var(--size-lead);font-style:italic;color:var(--color-heading);margin-block-end:var(--space-3);line-height:1.5;">"The quarterly audit reports and real-time portfolio tracking give me confidence that simply isn't available elsewhere."</p>
+            <div style="display:flex;align-items:center;gap:var(--space-2);">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80" alt="Elena Vasquez" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);" loading="lazy">
+              <div>
+                <div style="font-weight:var(--weight-bold-inline);color:var(--color-heading);font-size:var(--size-caption);">Elena Vasquez</div>
+                <div style="font-size:0.75rem;color:var(--color-text-muted);">Entrepreneur, Miami</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <p style="font-family:var(--font-heading);font-size:var(--size-lead);font-style:italic;color:var(--color-heading);margin-block-end:var(--space-3);line-height:1.5;">"We moved our family's precious metals holdings to Aurex and the transition was seamless. Their vaulting in Zurich is world-class."</p>
+            <div style="display:flex;align-items:center;gap:var(--space-2);">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Hans Müller" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);" loading="lazy">
+              <div>
+                <div style="font-weight:var(--weight-bold-inline);color:var(--color-heading);font-size:var(--size-caption);">Hans Müller</div>
+                <div style="font-size:0.75rem;color:var(--color-text-muted);">Family Office, Zurich</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <p style="font-family:var(--font-heading);font-size:var(--size-lead);font-style:italic;color:var(--color-heading);margin-block-end:var(--space-3);line-height:1.5;">"As a first-time precious metals investor, the Aurex team made every step approachable. Their advisory service is outstanding."</p>
+            <div style="display:flex;align-items:center;gap:var(--space-2);">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Priya Sharma" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);" loading="lazy">
+              <div>
+                <div style="font-weight:var(--weight-bold-inline);color:var(--color-heading);font-size:var(--size-caption);">Priya Sharma</div>
+                <div style="font-size:0.75rem;color:var(--color-text-muted);">Tech Executive, Singapore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta">
+      <div class="cta__deco" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Ready to Start?</span>
+          <h2>Your Portfolio Deserves Precious Metals</h2>
+          <p>Join 18,000+ investors who trust Aurex Capital with their alternative asset holdings. Open your account today.</p>
+        </div>
+        <div class="reveal" style="text-align:center;">
+          <a href="register.html" class="btn btn--gold btn--lg">Create Your Account</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <span class="footer__logo-icon"><i data-lucide="gem"></i></span>
+            Aurex Capital
+          </div>
+          <p>Premier alternative asset and precious metals investment firm. Building lasting wealth through diversification, transparency, and security since 2008.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Invest</h4>
+          <ul>
+            <li><a href="products.html">Gold</a></li>
+            <li><a href="products.html">Silver</a></li>
+            <li><a href="products.html">Platinum</a></li>
+            <li><a href="products.html">Palladium</a></li>
+            <li><a href="services.html">Advisory</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="vaulting.html">Vaulting</a></li>
+            <li><a href="insights.html">Market Insights</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Client Login</a></li>
+            <li><a href="register.html">Open Account</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aurex Capital. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" class="footer__social" aria-label="Twitter" title="Twitter / X"><i data-lucide="twitter"></i></a>
+          <a href="#" class="footer__social" aria-label="Instagram" title="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" class="footer__social" aria-label="YouTube" title="YouTube"><i data-lucide="youtube"></i></a>
+          <a href="#" class="footer__social" aria-label="Facebook" title="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

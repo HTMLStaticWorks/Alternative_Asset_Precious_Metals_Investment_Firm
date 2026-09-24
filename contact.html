@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Aurex Capital</title>
+  <meta name="description" content="Get in touch with Aurex Capital. Reach our advisory team, schedule a consultation, or visit our offices in Zurich, London, and New York.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Aurex Capital Home"><span class="navbar__logo-icon"><i data-lucide="gem"></i></span>Aurex Capital</a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a><a href="home2.html" class="navbar__link">Home 2</a>
+        <a href="services.html" class="navbar__link">Services</a><a href="products.html" class="navbar__link">Products</a>
+        <a href="vaulting.html" class="navbar__link">Vaulting</a><a href="insights.html" class="navbar__link">Insights</a>
+        <a href="blog.html" class="navbar__link">Blog</a><a href="contact.html" class="navbar__link active">Contact</a>
+        <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+        <a href="login.html" class="navbar__login-btn">Login</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__drawer" role="dialog" aria-label="Mobile menu">
+      <button class="navbar__drawer-close" aria-label="Close menu"><i data-lucide="x"></i></button>
+      <div class="navbar__drawer-links">
+        <a href="index.html" class="navbar__drawer-link">Home</a><a href="home2.html" class="navbar__drawer-link">Home 2</a>
+        <a href="services.html" class="navbar__drawer-link">Services</a><a href="products.html" class="navbar__drawer-link">Products</a>
+        <a href="vaulting.html" class="navbar__drawer-link">Vaulting</a><a href="insights.html" class="navbar__drawer-link">Insights</a>
+        <a href="blog.html" class="navbar__drawer-link">Blog</a><a href="contact.html" class="navbar__drawer-link active">Contact</a>
+        <a href="dashboard.html" class="navbar__drawer-link">Dashboard</a><a href="login.html" class="navbar__drawer-link">Login</a>
+      </div>
+      <div class="navbar__drawer-actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+      </div>
+    </div>
+    <div class="navbar__overlay"></div>
+  </nav>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label">Get In Touch</span>
+        <h1>Contact Us</h1>
+        <p>Our advisory team is ready to help you explore precious metals investing.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="contact-grid reveal">
+          <!-- Contact Form -->
+          <div>
+            <h2 style="text-align:start;font-size:var(--size-h3);margin-block-end:var(--space-4);">Send Us a Message</h2>
+            <form class="form" data-validate id="contact-form">
+              <div class="form__row">
+                <div class="form__group">
+                  <label class="form__label" for="contact-first">First Name *</label>
+                  <input type="text" id="contact-first" name="first-name" class="form__input" required placeholder="John" aria-required="true">
+                  <span class="form__error"></span>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="contact-last">Last Name *</label>
+                  <input type="text" id="contact-last" name="last-name" class="form__input" required placeholder="Doe" aria-required="true">
+                  <span class="form__error"></span>
+                </div>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" name="email" class="form__input" required placeholder="john@example.com" aria-required="true">
+                <span class="form__error"></span>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="contact-phone">Phone Number</label>
+                <input type="tel" id="contact-phone" name="phone" class="form__input" placeholder="+1 (555) 000-0000">
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="contact-subject">Subject *</label>
+                <input type="text" id="contact-subject" name="subject" class="form__input" required placeholder="Portfolio consultation" aria-required="true">
+                <span class="form__error"></span>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="contact-message">Message *</label>
+                <textarea id="contact-message" name="message" class="form__textarea" required placeholder="Tell us how we can help..." aria-required="true"></textarea>
+                <span class="form__error"></span>
+              </div>
+              <button type="submit" class="btn btn--gold" id="contact-submit">Send Message</button>
+              <div class="form__success">Your message has been sent successfully. We'll respond within 24 hours.</div>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h2 style="text-align:start;font-size:var(--size-h3);margin-block-end:var(--space-4);">Get in Touch</h2>
+            <div class="contact-info">
+              <div class="contact-info__item">
+                <div class="contact-info__icon"><i data-lucide="mail"></i></div>
+                <div>
+                  <h4>Email</h4>
+                  <p>advisory@aurexcapital.com</p>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon"><i data-lucide="phone"></i></div>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+41 44 123 4567 (Zurich)</p>
+                  <p>+44 20 7946 0958 (London)</p>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon"><i data-lucide="map-pin"></i></div>
+                <div>
+                  <h4>Headquarters</h4>
+                  <p>Bahnhofstrasse 42, 8001 Zurich, Switzerland</p>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon"><i data-lucide="clock"></i></div>
+                <div>
+                  <h4>Business Hours</h4>
+                  <p>Monday – Friday: 8:00 AM – 6:00 PM CET</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-socials">
+              <a href="#" class="contact-social" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+              <a href="#" class="contact-social" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+              <a href="#" class="contact-social" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+              <a href="#" class="contact-social" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+            </div>
+
+            <div class="contact-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2701.5!2d8.539!3d47.369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDIyJzA4LjQiTiA4wrAzMicyMC40IkU!5e0!3m2!1sen!2sch!4v1" title="Aurex Capital Headquarters - Zurich" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo"><span class="footer__logo-icon"><i data-lucide="gem"></i></span>Aurex Capital</div>
+          <p>Premier alternative asset and precious metals investment firm since 2008.</p>
+        </div>
+        <div class="footer__col"><h4>Invest</h4><ul><li><a href="products.html">Gold</a></li><li><a href="products.html">Silver</a></li><li><a href="products.html">Platinum</a></li><li><a href="services.html">Advisory</a></li></ul></div>
+        <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="vaulting.html">Vaulting</a></li><li><a href="insights.html">Insights</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer__col"><h4>Account</h4><ul><li><a href="login.html">Client Login</a></li><li><a href="register.html">Open Account</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="#">Privacy</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aurex Capital. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" class="footer__social" aria-label="Twitter" title="Twitter / X"><i data-lucide="twitter"></i></a>
+          <a href="#" class="footer__social" aria-label="Instagram" title="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" class="footer__social" aria-label="YouTube" title="YouTube"><i data-lucide="youtube"></i></a>
+          <a href="#" class="footer__social" aria-label="Facebook" title="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

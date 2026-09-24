@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurex Capital — Alternative Asset & Precious Metals</title>
+  <meta name="description" content="Aurex Capital is a premier alternative asset and precious metals investment firm offering gold, silver, platinum, and diversified portfolio solutions with secure vaulting.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "Aurex Capital",
+    "description": "Alternative asset and precious metals investment firm",
+    "url": "https://aurexcapital.com",
+    "sameAs": ["https://twitter.com/aurexcapital","https://linkedin.com/company/aurexcapital"]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Aurex Capital Home">
+        <span class="navbar__logo-icon"><i data-lucide="gem"></i></span>
+        Aurex Capital
+      </a>
+
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link active">Home</a>
+        <a href="home2.html" class="navbar__link">Home 2</a>
+        <a href="services.html" class="navbar__link">Services</a>
+        <a href="products.html" class="navbar__link">Products</a>
+        <a href="vaulting.html" class="navbar__link">Vaulting</a>
+        <a href="insights.html" class="navbar__link">Insights</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+        <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      </div>
+
+      <div class="navbar__actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <a href="login.html" class="navbar__login-btn">Login</a>
+      </div>
+
+      <button class="navbar__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Drawer -->
+    <div class="navbar__drawer" role="dialog" aria-label="Mobile menu">
+      <button class="navbar__drawer-close" aria-label="Close menu"><i data-lucide="x"></i></button>
+      <div class="navbar__drawer-links">
+        <a href="index.html" class="navbar__drawer-link active">Home</a>
+        <a href="home2.html" class="navbar__drawer-link">Home 2</a>
+        <a href="services.html" class="navbar__drawer-link">Services</a>
+        <a href="products.html" class="navbar__drawer-link">Products</a>
+        <a href="vaulting.html" class="navbar__drawer-link">Vaulting</a>
+        <a href="insights.html" class="navbar__drawer-link">Insights</a>
+        <a href="blog.html" class="navbar__drawer-link">Blog</a>
+        <a href="contact.html" class="navbar__drawer-link">Contact</a>
+        <a href="dashboard.html" class="navbar__drawer-link">Dashboard</a>
+        <a href="login.html" class="navbar__drawer-link">Login</a>
+      </div>
+      <div class="navbar__drawer-actions">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+      </div>
+    </div>
+    <div class="navbar__overlay"></div>
+  </nav>
+
+  <main id="main">
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1920&q=80" alt="Gold bars arranged in secure vault" loading="eager">
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__deco hero__deco--lines" aria-hidden="true"></div>
+      <div class="hero__deco hero__deco--diamond" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__label">Trusted Since 2008</span>
+          <h1>Diversify Beyond Traditional Markets</h1>
+          <p class="hero__desc">Build lasting wealth through precious metals and alternative assets. Aurex Capital provides institutional-grade access to gold, silver, platinum, and diversified asset strategies.</p>
+          <div class="hero__btns">
+            <a href="products.html" class="btn btn--gold btn--lg">Explore Products</a>
+            <a href="services.html" class="btn btn--secondary btn--lg">Our Services</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="container">
+          <div class="hero__stats-grid">
+            <div class="hero__stat">
+              <div class="hero__stat-value">$4.2B</div>
+              <div class="hero__stat-label">Assets Under Management</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-value">18K+</div>
+              <div class="hero__stat-label">Active Clients</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-value">99.9%</div>
+              <div class="hero__stat-label">Vault Security Rating</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-value">16</div>
+              <div class="hero__stat-label">Years of Excellence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICES ═══ -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">What We Offer</span>
+          <h2>Investment Services</h2>
+          <p>Comprehensive precious metals and alternative asset solutions tailored for high-net-worth individuals and institutional investors.</p>
+        </div>
+        <div class="grid grid--3">
+          <div class="card reveal reveal-delay-1">
+            <div class="card__icon"><i data-lucide="bar-chart-3"></i></div>
+            <h3>Portfolio Advisory</h3>
+            <p>Personalized asset allocation strategies integrating precious metals with traditional investments for optimal diversification.</p>
+            <a href="services.html" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <div class="card__icon"><i data-lucide="shield-check"></i></div>
+            <h3>Secure Vaulting</h3>
+            <p>State-of-the-art allocated storage in LBMA-approved vaults across multiple jurisdictions with full insurance coverage.</p>
+            <a href="vaulting.html" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="card reveal reveal-delay-3">
+            <div class="card__icon"><i data-lucide="repeat"></i></div>
+            <h3>Trading Desk</h3>
+            <p>Execute buy and sell orders at competitive spreads with real-time market pricing and instant settlement capabilities.</p>
+            <a href="products.html" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-split">
+          <div class="about-split__img reveal">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Aurex Capital headquarters in financial district" loading="lazy">
+          </div>
+          <div class="about-split__content reveal">
+            <span class="section-label">Our Story</span>
+            <h2>Built on Trust, Backed by Expertise</h2>
+            <p>Founded in 2008 during the global financial crisis, Aurex Capital was established with a singular vision: to provide discerning investors with direct access to the world's most enduring stores of value.</p>
+            <p>Our team of seasoned commodity specialists, former central bank advisors, and wealth management professionals delivers institutional-grade service to every client, regardless of portfolio size.</p>
+            <a href="about.html" class="btn btn--primary">Discover Our Heritage</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FEATURES ═══ -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Why Aurex</span>
+          <h2>The Aurex Advantage</h2>
+          <p>Institutional-grade infrastructure designed for the modern investor.</p>
+        </div>
+        <div class="grid grid--4">
+          <div class="feature-item reveal reveal-delay-1">
+            <div class="feature-item__icon"><i data-lucide="lock"></i></div>
+            <h4>Allocated Storage</h4>
+            <p>Your metals are stored separately — never commingled — and fully insured by Lloyd's of London.</p>
+          </div>
+          <div class="feature-item reveal reveal-delay-2">
+            <div class="feature-item__icon"><i data-lucide="globe"></i></div>
+            <h4>Global Access</h4>
+            <p>Vaulting facilities in Zurich, Singapore, London, and New York with seamless cross-border transfers.</p>
+          </div>
+          <div class="feature-item reveal reveal-delay-3">
+            <div class="feature-item__icon"><i data-lucide="trending-up"></i></div>
+            <h4>Live Market Pricing</h4>
+            <p>Transparent, real-time pricing sourced from LBMA benchmarks with no hidden markups or fees.</p>
+          </div>
+          <div class="feature-item reveal reveal-delay-4">
+            <div class="feature-item__icon"><i data-lucide="scan"></i></div>
+            <h4>Audited Quarterly</h4>
+            <p>Independent third-party audits by Deloitte ensure full accountability and asset verification.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TESTIMONIALS ═══ -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Client Stories</span>
+          <h2>Trusted by Investors Worldwide</h2>
+        </div>
+        <div class="testimonials__slider reveal">
+          <div class="testimonials__track">
+            <div class="testimonial">
+              <p class="testimonial__quote">Aurex Capital transformed how I think about wealth preservation. Their allocated storage gives me complete peace of mind, knowing my gold is secure and fully insured.</p>
+              <div class="testimonial__author">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80" alt="Richard Harrington" class="testimonial__avatar" loading="lazy">
+                <span class="testimonial__name">Richard Harrington</span>
+                <span class="testimonial__role">Private Investor, London</span>
+              </div>
+            </div>
+            <div class="testimonial">
+              <p class="testimonial__quote">The portfolio advisory team helped us allocate 15% of our endowment into precious metals. The diversification has meaningfully reduced our overall portfolio volatility.</p>
+              <div class="testimonial__author">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80" alt="Sarah Chen" class="testimonial__avatar" loading="lazy">
+                <span class="testimonial__name">Sarah Chen</span>
+                <span class="testimonial__role">CIO, Chen Family Office</span>
+              </div>
+            </div>
+            <div class="testimonial">
+              <p class="testimonial__quote">What sets Aurex apart is their transparency. Real-time pricing, quarterly audits, and a client portal that lets me see exactly where my assets are stored at any moment.</p>
+              <div class="testimonial__author">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Marcus Adler" class="testimonial__avatar" loading="lazy">
+                <span class="testimonial__name">Marcus Adler</span>
+                <span class="testimonial__role">Wealth Manager, Zurich</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials__nav">
+            <button class="prev-btn" aria-label="Previous testimonial"><i data-lucide="chevron-left"></i></button>
+            <button class="next-btn" aria-label="Next testimonial"><i data-lucide="chevron-right"></i></button>
+          </div>
+          <div class="testimonials__dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta">
+      <div class="cta__deco" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Get Started</span>
+          <h2>Begin Your Precious Metals Journey</h2>
+          <p>Open an account in minutes and gain access to institutional-grade precious metals investing with expert guidance every step of the way.</p>
+        </div>
+        <div class="reveal" style="text-align:center;">
+          <a href="register.html" class="btn btn--gold btn--lg">Open an Account</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <span class="footer__logo-icon"><i data-lucide="gem"></i></span>
+            Aurex Capital
+          </div>
+          <p>Premier alternative asset and precious metals investment firm. Building lasting wealth through diversification, transparency, and security since 2008.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Invest</h4>
+          <ul>
+            <li><a href="products.html">Gold</a></li>
+            <li><a href="products.html">Silver</a></li>
+            <li><a href="products.html">Platinum</a></li>
+            <li><a href="products.html">Palladium</a></li>
+            <li><a href="services.html">Advisory</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="vaulting.html">Vaulting</a></li>
+            <li><a href="insights.html">Market Insights</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Client Login</a></li>
+            <li><a href="register.html">Open Account</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aurex Capital. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" class="footer__social" aria-label="Twitter" title="Twitter / X"><i data-lucide="twitter"></i></a>
+          <a href="#" class="footer__social" aria-label="Instagram" title="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" class="footer__social" aria-label="YouTube" title="YouTube"><i data-lucide="youtube"></i></a>
+          <a href="#" class="footer__social" aria-label="Facebook" title="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

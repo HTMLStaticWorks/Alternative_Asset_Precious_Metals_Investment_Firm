@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Aurex Capital</title>
+  <meta name="description" content="Manage your precious metals portfolio, track holdings, place orders, and access storage documentation in your Aurex Capital client dashboard.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .portfolio-chart {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin: 0 auto var(--space-3);
+      position: relative;
+    }
+    .portfolio-chart::after {
+      content: '';
+      position: absolute;
+      inset: 35px;
+      border-radius: 50%;
+      background: var(--color-surface);
+    }
+    .portfolio-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .portfolio-legend__item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+      font-size: var(--size-caption);
+    }
+    .portfolio-legend__color {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .portfolio-legend__label {
+      flex: 1;
+      color: var(--color-text-muted);
+    }
+    .portfolio-legend__value {
+      font-weight: var(--weight-bold-inline);
+      color: var(--color-heading);
+    }
+    .order-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .order-form select {
+      padding: 12px var(--space-3);
+      background: var(--color-surface);
+      border: 1px solid var(--box-border);
+      border-radius: var(--radius-sm);
+      color: var(--color-text);
+      font-size: var(--size-body);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .order-form select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.22);
+    }
+    .order-tabs {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--box-border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-block-end: var(--space-2);
+    }
+    .order-tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      font-size: var(--size-caption);
+      font-weight: 600;
+      background: var(--box-bg-subtle);
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+    }
+    .order-tab.active {
+      background: var(--gold);
+      color: var(--navy);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+    .doc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .doc-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: 14px var(--space-3);
+      border-radius: var(--radius-md);
+      background: var(--box-bg-subtle);
+      border: 1px solid var(--box-border-subtle);
+      transition: all var(--transition);
+    }
+    .doc-item:hover {
+      background: var(--box-bg);
+      border-color: var(--box-border);
+      transform: translateX(4px);
+      box-shadow: var(--box-shadow);
+    }
+    .doc-item i {
+      color: var(--gold);
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    .doc-item__name {
+      flex: 1;
+      font-size: var(--size-caption);
+      font-weight: var(--weight-bold-inline);
+      color: var(--color-heading);
+    }
+    .doc-item__size {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+  </style>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <!-- Dashboard Overlay (mobile) -->
+  <div class="navbar__overlay dashboard__overlay"></div>
+
+  <div class="dashboard">
+    <!-- ═══ SIDEBAR ═══ -->
+    <aside class="dashboard__sidebar">
+      <div class="dashboard__sidebar-header">
+        <a href="index.html" class="dashboard__sidebar-logo">
+          <span class="navbar__logo-icon"><i data-lucide="gem"></i></span>
+          Aurex Capital
+        </a>
+      </div>
+
+      <nav class="dashboard__nav">
+        <div class="dashboard__nav-section">
+          <div class="dashboard__nav-title">Overview</div>
+          <a href="#" class="dashboard__nav-link active" data-tab="tab-overview"><i data-lucide="layout-dashboard"></i> Portfolio Overview</a>
+          <a href="#" class="dashboard__nav-link" data-tab="tab-holdings"><i data-lucide="wallet"></i> Holdings</a>
+          <a href="#" class="dashboard__nav-link" data-tab="tab-orders"><i data-lucide="arrow-left-right"></i> Buy / Sell</a>
+          <a href="#" class="dashboard__nav-link" data-tab="tab-market"><i data-lucide="trending-up"></i> Market Trends</a>
+        </div>
+        <div class="dashboard__nav-section">
+          <div class="dashboard__nav-title">Account</div>
+          <a href="#" class="dashboard__nav-link" data-tab="tab-transactions"><i data-lucide="receipt"></i> Transactions</a>
+          <a href="#" class="dashboard__nav-link" data-tab="tab-documents"><i data-lucide="file-text"></i> Documents</a>
+          <a href="#" class="dashboard__nav-link" data-tab="tab-messages"><i data-lucide="mail"></i> Messages <span class="badge">3</span></a>
+          <a href="#" class="dashboard__nav-link" data-tab="tab-settings"><i data-lucide="settings"></i> Settings</a>
+        </div>
+      </nav>
+
+      <div class="dashboard__sidebar-footer">
+        <div class="dashboard__user">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="User avatar" class="dashboard__user-avatar" loading="lazy">
+          <div class="dashboard__user-info">
+            <div class="dashboard__user-name">Richard Harrington</div>
+            <div class="dashboard__user-email">richard@example.com</div>
+          </div>
+        </div>
+        <a href="login.html" class="dashboard__nav-link" style="margin-block-start:var(--space-1);"><i data-lucide="log-out"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- ═══ MAIN CONTENT ═══ -->
+    <div class="dashboard__main">
+      <div class="dashboard__topbar">
+        <div style="display:flex;align-items:center;gap:var(--space-2);">
+          <button class="dashboard__menu-toggle" aria-label="Toggle sidebar"><i data-lucide="menu"></i></button>
+          <h1>Portfolio Overview</h1>
+        </div>
+        <div class="dashboard__topbar-actions">
+          <button class="navbar__toggle-btn dashboard__theme-toggle" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+          <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+        </div>
+      </div>
+
+      <!-- ═══ TAB: OVERVIEW ═══ -->
+      <div class="dashboard__tab-content active" id="tab-overview">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-card__header">
+              <div class="kpi-card__icon"><i data-lucide="wallet"></i></div>
+              <span class="kpi-card__change positive">+8.4%</span>
+            </div>
+            <div class="kpi-card__value">$847,320</div>
+            <div class="kpi-card__label">Total Portfolio Value</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card__header">
+              <div class="kpi-card__icon"><i data-lucide="bar-chart-3"></i></div>
+              <span class="kpi-card__change positive">+12.1%</span>
+            </div>
+            <div class="kpi-card__value">$92,460</div>
+            <div class="kpi-card__label">Unrealized P&L</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card__header">
+              <div class="kpi-card__icon"><i data-lucide="gem"></i></div>
+              <span class="kpi-card__change positive">+1.2%</span>
+            </div>
+            <div class="kpi-card__value">362.4 oz</div>
+            <div class="kpi-card__label">Total Ounces Held</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card__header">
+              <div class="kpi-card__icon"><i data-lucide="shield-check"></i></div>
+            </div>
+            <div class="kpi-card__value">Zurich</div>
+            <div class="kpi-card__label">Primary Vault Location</div>
+          </div>
+        </div>
+
+        <div class="dashboard__panels">
+          <!-- Holdings Breakdown -->
+          <div class="dashboard__panel">
+            <div class="dashboard__panel-header">
+              <h3>Asset Allocation</h3>
+              <a href="#" class="btn btn--sm btn--secondary" data-tab="tab-holdings" onclick="document.querySelector('[data-tab=tab-holdings]').click()">View All</a>
+            </div>
+            <table class="holdings-table">
+              <thead>
+                <tr>
+                  <th>Asset</th>
+                  <th>Quantity</th>
+                  <th>Value</th>
+                  <th>Change</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="asset-name"><div class="asset-icon"><i data-lucide="circle-dollar-sign"></i></div>Gold (XAU)</div></td>
+                  <td>160.0 oz</td>
+                  <td>$374,640</td>
+                  <td style="color:var(--color-success);">+1.24%</td>
+                </tr>
+                <tr>
+                  <td><div class="asset-name"><div class="asset-icon"><i data-lucide="circle-dollar-sign"></i></div>Silver (XAG)</div></td>
+                  <td>6,400 oz</td>
+                  <td>$178,240</td>
+                  <td style="color:var(--color-success);">+2.18%</td>
+                </tr>
+                <tr>
+                  <td><div class="asset-name"><div class="asset-icon"><i data-lucide="circle-dollar-sign"></i></div>Platinum (XPT)</div></td>
+                  <td>120.0 oz</td>
+                  <td>$121,476</td>
+                  <td style="color:var(--color-error);">-0.45%</td>
+                </tr>
+                <tr>
+                  <td><div class="asset-name"><div class="asset-icon"><i data-lucide="circle-dollar-sign"></i></div>Palladium (XPD)</div></td>
+                  <td>82.4 oz</td>
+                  <td>$79,634</td>
+                  <td style="color:var(--color-success);">+0.72%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Allocation Chart -->
+          <div class="dashboard__panel">
+            <div class="dashboard__panel-header">
+              <h3>Allocation</h3>
+            </div>
+            <div class="portfolio-chart"></div>
+            <div class="portfolio-legend"></div>
+          </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="dashboard__panel">
+          <div class="dashboard__panel-header">
+            <h3>Recent Transactions</h3>
+            <a href="#" class="btn btn--sm btn--secondary" onclick="document.querySelector('[data-tab=tab-transactions]').click()">View All</a>
+          </div>
+          <div class="transaction-list">
+            <div class="transaction-item">
+              <div class="transaction-item__icon buy"><i data-lucide="arrow-down-left"></i></div>
+              <div class="transaction-item__details">
+                <div class="transaction-item__title">Bought 10 oz Gold</div>
+                <div class="transaction-item__date">Sep 15, 2024</div>
+              </div>
+              <div class="transaction-item__amount">$23,415.00</div>
+            </div>
+            <div class="transaction-item">
+              <div class="transaction-item__icon sell"><i data-lucide="arrow-up-right"></i></div>
+              <div class="transaction-item__details">
+                <div class="transaction-item__title">Sold 500 oz Silver</div>
+                <div class="transaction-item__date">Sep 10, 2024</div>
+              </div>
+              <div class="transaction-item__amount">$13,925.00</div>
+            </div>
+            <div class="transaction-item">
+              <div class="transaction-item__icon buy"><i data-lucide="arrow-down-left"></i></div>
+              <div class="transaction-item__details">
+                <div class="transaction-item__title">Bought 5 oz Platinum</div>
+                <div class="transaction-item__date">Sep 3, 2024</div>
+              </div>
+              <div class="transaction-item__amount">$5,061.50</div>
+            </div>
+            <div class="transaction-item">
+              <div class="transaction-item__icon buy"><i data-lucide="arrow-down-left"></i></div>
+              <div class="transaction-item__details">
+                <div class="transaction-item__title">Bought 20 oz Gold</div>
+                <div class="transaction-item__date">Aug 28, 2024</div>
+              </div>
+              <div class="transaction-item__amount">$46,160.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ TAB: HOLDINGS ═══ -->
+      <div class="dashboard__tab-content" id="tab-holdings">
+        <div class="dashboard__panel">
+          <div class="dashboard__panel-header">
+            <h3>Complete Holdings</h3>
+          </div>
+          <table class="holdings-table">
+            <thead>
+              <tr><th>Asset</th><th>Qty (oz)</th><th>Avg Cost</th><th>Current Price</th><th>Value</th><th>P&L</th><th>Vault</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="asset-name"><div class="asset-icon"><i data-lucide="circle-dollar-sign"></i></div>Gold</div></td>
+                <td>160.0</td><td>$2,198.00</td><td>$2,341.50</td><td>$374,640</td>
+                <td style="color:var(--color-success);">+$22,960</td><td>Zurich</td>
+              </tr>
+              <tr>
+                <td><div class="asset-name"><div class="asset-icon"><i data-lucide="circle-dollar-sign"></i></div>Silver</div></td>
+                <td>6,400</td><td>$24.20</td><td>$27.85</td><td>$178,240</td>
+                <td style="color:var(--color-success);">+$23,360</td><td>London</td>
+              </tr>
+              <tr>
+                <td><div class="asset-name"><div class="asset-icon"><i data-lucide="circle-dollar-sign"></i></div>Platinum</div></td>
+                <td>120.0</td><td>$945.00</td><td>$1,012.30</td><td>$121,476</td>
+                <td style="color:var(--color-success);">+$8,076</td><td>Zurich</td>
+              </tr>
+              <tr>
+                <td><div class="asset-name"><div class="asset-icon"><i data-lucide="circle-dollar-sign"></i></div>Palladium</div></td>
+                <td>82.4</td><td>$1,024.00</td><td>$967.40</td><td>$79,634</td>
+                <td style="color:var(--color-error);">-$4,662</td><td>Singapore</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══ TAB: BUY/SELL ═══ -->
+      <div class="dashboard__tab-content" id="tab-orders">
+        <div class="dashboard__panels">
+          <div class="dashboard__panel">
+            <div class="dashboard__panel-header"><h3>Place Order</h3></div>
+            <div class="order-form">
+              <div class="order-tabs">
+                <button class="order-tab active">Buy</button>
+                <button class="order-tab">Sell</button>
+              </div>
+              <div class="form__group">
+                <label class="form__label">Select Metal</label>
+                <select><option>Gold (XAU) — $2,341.50/oz</option><option>Silver (XAG) — $27.85/oz</option><option>Platinum (XPT) — $1,012.30/oz</option><option>Palladium (XPD) — $967.40/oz</option></select>
+              </div>
+              <div class="form__group">
+                <label class="form__label">Quantity (oz)</label>
+                <input type="number" class="form__input" placeholder="e.g. 10" min="0.1" step="0.1">
+              </div>
+              <div class="form__group">
+                <label class="form__label">Vault Location</label>
+                <select><option>Zurich, Switzerland</option><option>London, UK</option><option>Singapore</option><option>New York, USA</option></select>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:var(--space-2);background:var(--color-surface-alt);border-radius:var(--radius);">
+                <span style="font-size:var(--size-caption);color:var(--color-text-muted);">Estimated Total:</span>
+                <span style="font-family:var(--font-heading);font-weight:var(--weight-h3);color:var(--color-heading);">$23,415.00</span>
+              </div>
+              <button class="btn btn--gold">Place Order</button>
+            </div>
+          </div>
+          <div class="dashboard__panel">
+            <div class="dashboard__panel-header"><h3>Live Prices</h3></div>
+            <div class="market-prices">
+              <div class="market-price-item">
+                <div><div class="market-price-item__name">Gold</div></div>
+                <div style="text-align:end;"><div class="market-price-item__price">$2,341.50</div><div class="market-price-item__change up">▲ +1.24%</div></div>
+              </div>
+              <div class="market-price-item">
+                <div><div class="market-price-item__name">Silver</div></div>
+                <div style="text-align:end;"><div class="market-price-item__price">$27.85</div><div class="market-price-item__change up">▲ +2.18%</div></div>
+              </div>
+              <div class="market-price-item">
+                <div><div class="market-price-item__name">Platinum</div></div>
+                <div style="text-align:end;"><div class="market-price-item__price">$1,012.30</div><div class="market-price-item__change down">▼ -0.45%</div></div>
+              </div>
+              <div class="market-price-item">
+                <div><div class="market-price-item__name">Palladium</div></div>
+                <div style="text-align:end;"><div class="market-price-item__price">$967.40</div><div class="market-price-item__change up">▲ +0.72%</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ TAB: MARKET TRENDS ═══ -->
+      <div class="dashboard__tab-content" id="tab-market">
+        <div class="kpi-grid">
+          <div class="kpi-card"><div class="kpi-card__header"><div class="kpi-card__icon"><i data-lucide="circle-dollar-sign"></i></div><span class="kpi-card__change positive">+1.24%</span></div><div class="kpi-card__value">$2,341.50</div><div class="kpi-card__label">Gold (XAU)</div></div>
+          <div class="kpi-card"><div class="kpi-card__header"><div class="kpi-card__icon"><i data-lucide="circle-dollar-sign"></i></div><span class="kpi-card__change positive">+2.18%</span></div><div class="kpi-card__value">$27.85</div><div class="kpi-card__label">Silver (XAG)</div></div>
+          <div class="kpi-card"><div class="kpi-card__header"><div class="kpi-card__icon"><i data-lucide="circle-dollar-sign"></i></div><span class="kpi-card__change negative">-0.45%</span></div><div class="kpi-card__value">$1,012.30</div><div class="kpi-card__label">Platinum (XPT)</div></div>
+          <div class="kpi-card"><div class="kpi-card__header"><div class="kpi-card__icon"><i data-lucide="circle-dollar-sign"></i></div><span class="kpi-card__change positive">+0.72%</span></div><div class="kpi-card__value">$967.40</div><div class="kpi-card__label">Palladium (XPD)</div></div>
+        </div>
+        <div class="dashboard__panel">
+          <div class="dashboard__panel-header"><h3>Market Summary</h3></div>
+          <p style="padding:var(--space-2);line-height:1.8;">Gold continues its upward trajectory, driven by central bank buying and expectations of rate cuts. The gold-to-silver ratio sits at 84.1, suggesting silver may be relatively undervalued. Platinum group metals remain range-bound as industrial demand balances against economic uncertainty. Monitor the upcoming Fed meeting for potential catalysts.</p>
+        </div>
+      </div>
+
+      <!-- ═══ TAB: TRANSACTIONS ═══ -->
+      <div class="dashboard__tab-content" id="tab-transactions">
+        <div class="dashboard__panel">
+          <div class="dashboard__panel-header"><h3>Transaction History</h3></div>
+          <table class="holdings-table">
+            <thead><tr><th>Date</th><th>Type</th><th>Asset</th><th>Quantity</th><th>Price/oz</th><th>Total</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Sep 15, 2024</td><td style="color:var(--color-success);">Buy</td><td>Gold</td><td>10 oz</td><td>$2,341.50</td><td>$23,415.00</td><td><span class="kpi-card__change positive">Settled</span></td></tr>
+              <tr><td>Sep 10, 2024</td><td style="color:var(--color-error);">Sell</td><td>Silver</td><td>500 oz</td><td>$27.85</td><td>$13,925.00</td><td><span class="kpi-card__change positive">Settled</span></td></tr>
+              <tr><td>Sep 3, 2024</td><td style="color:var(--color-success);">Buy</td><td>Platinum</td><td>5 oz</td><td>$1,012.30</td><td>$5,061.50</td><td><span class="kpi-card__change positive">Settled</span></td></tr>
+              <tr><td>Aug 28, 2024</td><td style="color:var(--color-success);">Buy</td><td>Gold</td><td>20 oz</td><td>$2,308.00</td><td>$46,160.00</td><td><span class="kpi-card__change positive">Settled</span></td></tr>
+              <tr><td>Aug 15, 2024</td><td style="color:var(--color-success);">Buy</td><td>Silver</td><td>1000 oz</td><td>$24.50</td><td>$24,500.00</td><td><span class="kpi-card__change positive">Settled</span></td></tr>
+              <tr><td>Aug 1, 2024</td><td style="color:var(--color-error);">Sell</td><td>Palladium</td><td>10 oz</td><td>$985.00</td><td>$9,850.00</td><td><span class="kpi-card__change positive">Settled</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══ TAB: DOCUMENTS ═══ -->
+      <div class="dashboard__tab-content" id="tab-documents">
+        <div class="dashboard__panels">
+          <div class="dashboard__panel">
+            <div class="dashboard__panel-header"><h3>Storage Certificates</h3></div>
+            <div class="doc-list">
+              <div class="doc-item"><i data-lucide="file-text"></i><span class="doc-item__name">Vault Certificate — Zurich (Q3 2024)</span><span class="doc-item__size">PDF, 245 KB</span></div>
+              <div class="doc-item"><i data-lucide="file-text"></i><span class="doc-item__name">Vault Certificate — London (Q3 2024)</span><span class="doc-item__size">PDF, 198 KB</span></div>
+              <div class="doc-item"><i data-lucide="file-text"></i><span class="doc-item__name">Vault Certificate — Singapore (Q3 2024)</span><span class="doc-item__size">PDF, 212 KB</span></div>
+            </div>
+          </div>
+          <div class="dashboard__panel">
+            <div class="dashboard__panel-header"><h3>Insurance & Audit</h3></div>
+            <div class="doc-list">
+              <div class="doc-item"><i data-lucide="shield"></i><span class="doc-item__name">Lloyd's Insurance Certificate 2024</span><span class="doc-item__size">PDF, 892 KB</span></div>
+              <div class="doc-item"><i data-lucide="scan"></i><span class="doc-item__name">Deloitte Audit Report Q2 2024</span><span class="doc-item__size">PDF, 1.4 MB</span></div>
+              <div class="doc-item"><i data-lucide="file-text"></i><span class="doc-item__name">Account Agreement</span><span class="doc-item__size">PDF, 324 KB</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ TAB: MESSAGES ═══ -->
+      <div class="dashboard__tab-content" id="tab-messages">
+        <div class="dashboard__panel">
+          <div class="dashboard__panel-header"><h3>Messages</h3></div>
+          <div class="messages-list">
+            <div class="message-item">
+              <div class="message-item__avatar"><i data-lucide="user"></i></div>
+              <div class="message-item__content">
+                <div class="message-item__sender">Sarah Mitchell — Account Manager</div>
+                <div class="message-item__text">Your Q3 vault certificate is now available in Documents. Please review at your convenience.</div>
+              </div>
+              <div class="message-item__time">2h ago</div>
+            </div>
+            <div class="message-item">
+              <div class="message-item__avatar"><i data-lucide="bell"></i></div>
+              <div class="message-item__content">
+                <div class="message-item__sender">System Notification</div>
+                <div class="message-item__text">Your buy order for 10 oz Gold has been settled. View in transaction history.</div>
+              </div>
+              <div class="message-item__time">1d ago</div>
+            </div>
+            <div class="message-item">
+              <div class="message-item__avatar"><i data-lucide="trending-up"></i></div>
+              <div class="message-item__content">
+                <div class="message-item__sender">Market Alert</div>
+                <div class="message-item__text">Gold has crossed $2,340 — a new 3-month high. View the latest market commentary in Insights.</div>
+              </div>
+              <div class="message-item__time">3d ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ TAB: SETTINGS ═══ -->
+      <div class="dashboard__tab-content" id="tab-settings">
+        <div class="settings-section">
+          <h3>Profile Information</h3>
+          <form class="form" data-validate>
+            <div class="form__row">
+              <div class="form__group"><label class="form__label">First Name</label><input type="text" class="form__input" value="Richard"></div>
+              <div class="form__group"><label class="form__label">Last Name</label><input type="text" class="form__input" value="Harrington"></div>
+            </div>
+            <div class="form__group"><label class="form__label">Email</label><input type="email" class="form__input" value="richard@example.com"></div>
+            <div class="form__group"><label class="form__label">Phone</label><input type="tel" class="form__input" value="+44 20 7946 0123"></div>
+            <button type="submit" class="btn btn--gold">Save Changes</button>
+            <div class="form__success">Profile updated successfully.</div>
+          </form>
+        </div>
+        <div class="settings-section">
+          <h3>Security</h3>
+          <form class="form" data-validate>
+            <div class="form__group"><label class="form__label">Current Password</label><input type="password" name="current-password" class="form__input" required data-min-length="8" placeholder="••••••••"></div>
+            <div class="form__group"><label class="form__label">New Password</label><input type="password" name="password" class="form__input" required data-min-length="8" placeholder="Min 8 characters"></div>
+            <div class="form__group"><label class="form__label">Confirm New Password</label><input type="password" name="confirm-password" class="form__input" required placeholder="Repeat new password"></div>
+            <button type="submit" class="btn btn--primary">Update Password</button>
+            <div class="form__success">Password updated successfully.</div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Dashboard Footer -->
+      <footer class="dashboard__footer" style="margin-block-start:var(--space-6);padding-block:var(--space-4);border-block-start:1px solid var(--box-border-subtle);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);color:var(--color-text-muted);font-size:var(--size-caption);">
+        <p>&copy; 2026 Aurex Capital. Institutional Grade Vaulting & Investment Management.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" class="footer__social" aria-label="Twitter" title="Twitter / X"><i data-lucide="twitter"></i></a>
+          <a href="#" class="footer__social" aria-label="Instagram" title="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" class="footer__social" aria-label="YouTube" title="YouTube"><i data-lucide="youtube"></i></a>
+          <a href="#" class="footer__social" aria-label="Facebook" title="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
