@@ -2643,7 +2643,22 @@ section {
   justify-content: space-between;
   align-items: center;
   margin-block-end: var(--space-3);
-  gap: var(--space-2);
+  gap: var(--space-1);
+  flex-wrap: nowrap;
+}
+
+.auth__actions .form__checkbox {
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.auth__actions .form__checkbox input[type="checkbox"] {
+  margin-block-start: 0;
+}
+
+.auth__actions .form__checkbox label {
+  white-space: nowrap;
 }
 
 .auth__forgot {
@@ -2654,6 +2669,8 @@ section {
   display: inline-block;
   position: relative;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: color var(--transition), text-shadow var(--transition);
 }
 
@@ -4196,6 +4213,21 @@ section {
     justify-content: flex-end;
     margin-block-end: var(--space-2);
     z-index: 10;
+  }
+
+  .auth__card {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .auth__actions {
+    gap: var(--space-1);
+    flex-wrap: nowrap;
+  }
+
+  .auth__actions .form__checkbox label,
+  .auth__forgot {
+    font-size: 0.82rem;
+    white-space: nowrap;
   }
 }
 
