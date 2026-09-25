@@ -14,11 +14,15 @@
   <main>
     <section class="auth">
       <div class="auth__deco" aria-hidden="true"></div>
+      <div style="position: absolute; top: var(--space-3); inset-inline-end: var(--space-3); display: flex; gap: 8px; z-index: 10;">
+        <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
+        <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
+      </div>
       <div class="auth__card">
-        <div class="auth__logo">
+        <a href="index.html" class="auth__logo">
           <span class="auth__logo-icon"><i data-lucide="gem"></i></span>
           Aurex Capital
-        </div>
+        </a>
         <h1 class="auth__title">Create Account</h1>
         <p class="auth__subtitle">Start your precious metals journey</p>
 
@@ -67,14 +71,6 @@
 
         <div class="auth__footer">
           Already have an account? <a href="login.html">Login</a>
-        </div>
-
-        <div class="footer__socials" style="justify-content:center;margin-block-start:var(--space-3);">
-          <a href="#" class="footer__social" aria-label="LinkedIn" title="LinkedIn"><i data-lucide="linkedin"></i></a>
-          <a href="#" class="footer__social" aria-label="Twitter" title="Twitter / X"><i data-lucide="twitter"></i></a>
-          <a href="#" class="footer__social" aria-label="Instagram" title="Instagram"><i data-lucide="instagram"></i></a>
-          <a href="#" class="footer__social" aria-label="YouTube" title="YouTube"><i data-lucide="youtube"></i></a>
-          <a href="#" class="footer__social" aria-label="Facebook" title="Facebook"><i data-lucide="facebook"></i></a>
         </div>
       </div>
     </section>

@@ -12,7 +12,6 @@
     initSidebar();
     initTabs();
     initPortfolioChart();
-    initThemeDashboard();
   }
 
   /* ── Sidebar Toggle (Mobile) ───────────────────────────────────── */
@@ -122,17 +121,7 @@
     }
   }
 
-  /* ── Dashboard Theme Toggle ────────────────────────────────────── */
-  function initThemeDashboard() {
-    const themeBtn = document.querySelector('.dashboard__theme-toggle');
-    if (!themeBtn) return;
 
-    themeBtn.addEventListener('click', function () {
-      if (typeof window.toggleTheme === 'function') {
-        window.toggleTheme();
-      }
-    });
-  }
 
   /* ── Sparkline Mini Charts (CSS-based) ─────────────────────────── */
   function initSparklines() {
