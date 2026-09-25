@@ -14,7 +14,7 @@
   <main>
     <section class="auth">
       <div class="auth__deco" aria-hidden="true"></div>
-      <div style="position: absolute; top: var(--space-3); inset-inline-end: var(--space-3); display: flex; gap: 8px; z-index: 10;">
+      <div class="auth__toggles">
         <button class="navbar__toggle-btn" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()"><i data-lucide="moon"></i></button>
         <button class="navbar__toggle-btn" aria-label="Toggle RTL" onclick="toggleRTL()"><i data-lucide="arrow-left-right"></i></button>
       </div>
@@ -38,12 +38,12 @@
             <span class="form__error"></span>
           </div>
           
-          <div class="auth__actions" style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-3);">
+          <div class="auth__actions">
             <div class="form__checkbox">
               <input type="checkbox" id="login-remember" name="remember">
               <label for="login-remember">Remember me</label>
             </div>
-            <a href="#" style="color: var(--gold); font-size: var(--size-caption); font-weight: 500;">Forgot password?</a>
+            <a href="#" class="auth__forgot" id="login-forgot">Forgot password?</a>
           </div>
 
           <button type="submit" class="btn btn--gold" style="width:100%;" id="login-submit">Login</button>
