@@ -1001,7 +1001,8 @@ section {
 
 .hero h1 {
   color: #FFFFFF;
-  font-size: clamp(2.4rem, 4.5vw, var(--size-h1));
+  /* Same scale as inner-page heroes (.page-hero h1) at every breakpoint */
+  font-size: var(--size-h1);
   line-height: 1.15;
   margin-block-end: var(--space-2);
   opacity: 0;
@@ -1124,7 +1125,6 @@ section {
   }
 
   .hero h1 {
-    font-size: clamp(2.25rem, 3.8vw, 3.25rem);
     margin-block-end: var(--space-1);
   }
 
@@ -4602,10 +4602,31 @@ section {
 
   .hero__layout {
     grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-3);
   }
 
+  /* Stacked: image sits under the copy as a wide banner, badges tucked inside */
   .hero__visual {
-    display: none;
+    justify-self: stretch;
+    margin-block-start: var(--space-1);
+  }
+
+  .hero__visual img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 0 6px rgba(201, 169, 110, 0.08);
+  }
+
+  .hero__badge--top {
+    top: var(--space-2);
+    inset-inline-start: var(--space-2);
+  }
+
+  .hero__badge--bottom {
+    bottom: var(--space-2);
+    inset-inline-end: var(--space-2);
   }
 
   .hero__stats {
@@ -4817,7 +4838,8 @@ section {
     padding-block-end: var(--space-5);
   }
 
-  .page-hero h1 {
+  .page-hero h1,
+  .hero h1 {
     font-size: var(--size-h2);
   }
 
@@ -4861,38 +4883,65 @@ section {
    RESPONSIVE — DASHBOARD (≤ 480px)
    ═══════════════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
+  /* Home hero image on phones */
+  .hero__visual img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero__badge {
+    gap: 8px;
+    padding: 8px 10px;
+    font-size: 0.7rem;
+  }
+
+  .hero__badge strong {
+    font-size: 0.8rem;
+  }
+
+  .hero__badge-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero__badge--top {
+    top: 10px;
+    inset-inline-start: 10px;
+  }
+
+  .hero__badge--bottom {
+    bottom: 10px;
+    inset-inline-end: 10px;
+  }
+
   .dashboard__main {
     padding: var(--space-2);
   }
 
-  /* Row 1: menu + toggles. Row 2: page title on its own line */
+  /* Single row: smaller title so menu, title and toggles fit on one line */
   .dashboard__topbar {
     --topbar-bleed: var(--space-2);
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas:
-      "menu . actions"
-      "title title title";
-    row-gap: 6px;
+    gap: 8px;
+    min-height: 60px;
     margin-block-end: var(--space-3);
-    padding-block: 12px;
+    padding-block: 10px;
   }
 
   .dashboard__topbar-title {
-    display: contents;
-  }
-
-  .dashboard__menu-toggle {
-    grid-area: menu;
-  }
-
-  .dashboard__topbar-actions {
-    grid-area: actions;
+    gap: 10px;
   }
 
   .dashboard__topbar h1 {
-    grid-area: title;
-    font-size: 1.6rem;
+    font-size: clamp(1.05rem, 4.8vw, 1.35rem);
+  }
+
+  .dashboard__topbar-actions {
+    gap: 6px;
+  }
+
+  .dashboard__menu-toggle,
+  .dashboard__topbar-actions .navbar__toggle-btn {
+    width: 36px;
+    height: 36px;
   }
 
   .dashboard__panel {
