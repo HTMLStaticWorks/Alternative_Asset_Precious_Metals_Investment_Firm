@@ -119,15 +119,39 @@
       height: 20px;
       flex-shrink: 0;
     }
-    .doc-item__name {
+    .doc-item__info {
       flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .doc-item__name {
       font-size: var(--size-caption);
       font-weight: var(--weight-bold-inline);
       color: var(--color-heading);
+      line-height: 1.4;
     }
     .doc-item__size {
       font-size: 0.75rem;
       color: var(--color-text-muted);
+    }
+    .dashboard__panels--even {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (max-width: 1280px) {
+      .dashboard__panels--even {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .doc-item {
+        gap: var(--space-2);
+        padding: 12px var(--space-2);
+      }
+      .doc-item:hover {
+        transform: none;
+      }
     }
   </style>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -360,7 +384,7 @@
 
       <!-- ═══ TAB: BUY/SELL ═══ -->
       <div class="dashboard__tab-content" id="tab-orders">
-        <div class="dashboard__panels">
+        <div class="dashboard__panels dashboard__panels--even">
           <div class="dashboard__panel">
             <div class="dashboard__panel-header"><h3>Place Order</h3></div>
             <div class="order-form">
@@ -445,21 +469,21 @@
 
       <!-- ═══ TAB: DOCUMENTS ═══ -->
       <div class="dashboard__tab-content" id="tab-documents">
-        <div class="dashboard__panels">
+        <div class="dashboard__panels dashboard__panels--even">
           <div class="dashboard__panel">
             <div class="dashboard__panel-header"><h3>Storage Certificates</h3></div>
             <div class="doc-list">
-              <div class="doc-item"><i data-lucide="file-text"></i><span class="doc-item__name">Vault Certificate — Zurich (Q3 2024)</span><span class="doc-item__size">PDF, 245 KB</span></div>
-              <div class="doc-item"><i data-lucide="file-text"></i><span class="doc-item__name">Vault Certificate — London (Q3 2024)</span><span class="doc-item__size">PDF, 198 KB</span></div>
-              <div class="doc-item"><i data-lucide="file-text"></i><span class="doc-item__name">Vault Certificate — Singapore (Q3 2024)</span><span class="doc-item__size">PDF, 212 KB</span></div>
+              <div class="doc-item"><i data-lucide="file-text"></i><div class="doc-item__info"><span class="doc-item__name">Vault Certificate — Zurich (Q3 2024)</span><span class="doc-item__size">PDF, 245 KB</span></div></div>
+              <div class="doc-item"><i data-lucide="file-text"></i><div class="doc-item__info"><span class="doc-item__name">Vault Certificate — London (Q3 2024)</span><span class="doc-item__size">PDF, 198 KB</span></div></div>
+              <div class="doc-item"><i data-lucide="file-text"></i><div class="doc-item__info"><span class="doc-item__name">Vault Certificate — Singapore (Q3 2024)</span><span class="doc-item__size">PDF, 212 KB</span></div></div>
             </div>
           </div>
           <div class="dashboard__panel">
             <div class="dashboard__panel-header"><h3>Insurance & Audit</h3></div>
             <div class="doc-list">
-              <div class="doc-item"><i data-lucide="shield"></i><span class="doc-item__name">Lloyd's Insurance Certificate 2024</span><span class="doc-item__size">PDF, 892 KB</span></div>
-              <div class="doc-item"><i data-lucide="scan"></i><span class="doc-item__name">Deloitte Audit Report Q2 2024</span><span class="doc-item__size">PDF, 1.4 MB</span></div>
-              <div class="doc-item"><i data-lucide="file-text"></i><span class="doc-item__name">Account Agreement</span><span class="doc-item__size">PDF, 324 KB</span></div>
+              <div class="doc-item"><i data-lucide="shield"></i><div class="doc-item__info"><span class="doc-item__name">Lloyd's Insurance Certificate 2024</span><span class="doc-item__size">PDF, 892 KB</span></div></div>
+              <div class="doc-item"><i data-lucide="scan"></i><div class="doc-item__info"><span class="doc-item__name">Deloitte Audit Report Q2 2024</span><span class="doc-item__size">PDF, 1.4 MB</span></div></div>
+              <div class="doc-item"><i data-lucide="file-text"></i><div class="doc-item__info"><span class="doc-item__name">Account Agreement</span><span class="doc-item__size">PDF, 324 KB</span></div></div>
             </div>
           </div>
         </div>

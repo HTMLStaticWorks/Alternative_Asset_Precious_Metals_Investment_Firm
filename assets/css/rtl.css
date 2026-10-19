@@ -16,10 +16,11 @@
   transform: rotate(45deg) translate(-4px, -5px);
 }
 
-/* Drawer slides from left in RTL */
+/* Drawer slides from left in RTL. Use physical sides: inset-inline-start
+   resolves to the right in RTL, which left the hidden drawer mid-screen. */
 [dir="rtl"] .navbar__drawer {
-  inset-inline-end: auto;
-  inset-inline-start: 0;
+  right: auto;
+  left: 0;
   transform: translateX(-100%);
 }
 
