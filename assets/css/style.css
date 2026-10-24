@@ -4605,6 +4605,20 @@ section {
     gap: var(--space-3);
   }
 
+  /* Stacked: center the copy above the image */
+  .hero__content {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .hero__desc {
+    margin-inline: auto;
+  }
+
+  .hero__btns {
+    justify-content: center;
+  }
+
   /* Stacked: image sits under the copy as a wide banner, badges tucked inside */
   .hero__visual {
     justify-self: stretch;
